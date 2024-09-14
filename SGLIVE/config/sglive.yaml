@@ -1,0 +1,79 @@
+
+default:
+  use_gradient: True
+  init_opacity: 1.0
+  seginit:
+    type: circle
+    radius: 5
+  save:
+    init: true
+    image: true
+    output: true
+    video: true
+    loss: false
+  trainable: 
+    bg: False
+    record: True
+    stroke: False
+  num_iter: 500
+  lr_base:
+    bg: 0.01
+    point: 1
+    color: 0.01
+    stroke_width: null
+    stroke_color: null
+  coord_init:
+    type: segmentation
+  seed: 0
+  loss:
+    use_l1_loss: false
+    use_distance_weighted_loss: true
+    xing_loss_weight: 0.01
+    bis_loss_weight: null
+    use_segmentation_weight: true
+
+experiment_1x1:
+  path_schedule:
+    type: repeat
+    max_path: 1
+    schedule_each: 1
+
+experiment_4x1:
+  path_schedule:
+    type: repeat
+    max_path: 4
+    schedule_each: 1
+
+experiment_8x1:
+  path_schedule:
+    type: repeat
+    max_path: 8
+    schedule_each: 1
+
+experiment_16x1:
+  path_schedule:
+    type: repeat
+    max_path: 16
+    schedule_each: 1
+
+experiment_32x1:
+  path_schedule:
+    type: repeat
+    max_path: 32
+    schedule_each: 1
+
+experiment_64x1:
+  path_schedule:
+    type: repeat
+    max_path: 64
+    schedule_each: 1
+
+experiment_256:
+  path_schedule:
+    type: list
+    schedule: [1, 1, 2, 4, 8, 16, 32, 32, 32, 32, 32, 32, 32]
+
+experiment_512:
+  path_schedule:
+    type: list
+    schedule: [1, 1, 2, 4, 8, 16, 32, 64, 64, 64, 64, 64, 64, 64]

@@ -1,0 +1,3 @@
+[submodule "DiffVG"]
+	path = DiffVG
+	url = https://github.com/Rhacoal/diffvg.git
